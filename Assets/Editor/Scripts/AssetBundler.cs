@@ -245,6 +245,7 @@ public class AssetBundler
             .ToList();
 
         managedReferences.Add(Path.Combine(EditorApplication.applicationContentsPath, "Managed/UnityEngine"));
+        managedReferences.Add(Path.Combine(EditorApplication.applicationContentsPath, "Managed/UnlambdaLib"));
 
         //Next we need to grab some type references and use reflection to build things the way Unity does.
         //Note that EditorUtility.CompileCSharp will do *almost* exactly the same thing, but it unfortunately
