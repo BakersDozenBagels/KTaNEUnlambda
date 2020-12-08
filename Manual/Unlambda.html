@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Unlambda — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        table {
+            margin: 1em auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Unlambda</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Module Name.svg" class="diagram">
+                <h2>On the Subject of Unlambda</h2>
+                <p class="flavour-text">¬λ</p>
+
+                <p>This module will give you some amount of Unlambda characters at some point on some display.</p>
+
+                <p>Using the five buttons, input to the module the output of the expression given.</p>
+                
+                <p>For the purposes of this module, an expression's result is the result of the fiftieth* apply operator. If there are less than that many operations, it is the result of the entire expression.</p>
+                
+                <p>For the purposes of this module, the result of `kA is written k1A.<br />Similarly, the result of `sA is written s1A. The result of ``sAB is written s2BA.<br />An s function or a k function which has not yet been applied is written s or k respectively.<br />For the purposes of this module, ```sABC has applied five functions, and has evaluated C once. The third apply automatically applies the fourth, therefore it is not counted.</p>
+            </div>
+            <div class="page-footer relative-footer">Page 1 of 2</div>
+        </div>
+        <div class="page page-bg-02">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Unlambda</span>
+            </div>
+            <div class="page-content">
+                <h2>Unlambda Reference</h2>
+                
+                <p>All data in Unlambda is made up of functions. Each functions in Unlambda takes one parameter and returns a function.</p>
+                
+                <p>Unlambda has one operator, the apply operator. It is represented with ` (a grave). This operator applies a function to another function. It is used as such: `AB applies the function A to the function B.</p>
+                
+                <p>For the purposes of this module, only two base functions will appear: s and k. All other Unlambda functions will never appear on this module.</p>
+                
+                <p>The k function, when applied to a function A, returns a function, that when applied to a function B, returns A. In other words, k creates a constant function that ignores its input and returns A.</p>
+                
+                <p>The s function is more complicated than the k function. When applied to a function A, it returns another constructor, which returns a third function when applied to a function B. This third function, when applied to a function C, returns the result of ``AC`BC. In other words, the previous expression is equivalent to ```SABC.</p>
+                
+                <p>In Unlambda, an expression `AB always gets the result of A, then gets the result of B, then applies the one to the other.</p>
+                
+                <h3>Example</h3>
+                
+                <p>Entries with *asterisks* do not count towards the total.<br />Entries with (parenthesis) have already been evaluated.</p>
+                
+                <p>```skkk → ``(s1k)kk → `(s2kk)k *→* ``kk`kk → `(k1k)`kk → `(k1k)(k1k) → k</p> 
+                
+                <p>The following expression is evaluated in the shown order.</p>
+                
+                <p>``AC`BC → A → C → `(A)(C) → B → *C* → `(B)(C) → `(`AC)(`BC)</p>
+                
+            </div>
+            <div class="page-footer relative-footer">Page 2 of 2</div>
+        </div>
+    </div>
+</body>
+</html>
