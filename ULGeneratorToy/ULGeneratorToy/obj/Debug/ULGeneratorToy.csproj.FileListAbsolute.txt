@@ -1,0 +1,2 @@
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\obj\Debug\ULGeneratorToy.csprojAssemblyReference.cache
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\obj\Debug\ULGeneratorToy.csproj.CoreCompileInputs.cache

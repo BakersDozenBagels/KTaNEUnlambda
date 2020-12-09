@@ -1,9 +1,21 @@
-﻿using System;
-using UnityEngine;
-using rng = UnityEngine.Random;
+using System;
 using UnlambdaLib;
+using System.Linq;
 
-public class ULInterface : MonoBehaviour {
+public class ULInterface
+{
+    public static void Main()
+    {
+        Console.WriteLine("Max iterations?");
+        int iters = int.Parse(Console.ReadLine());
+        Console.WriteLine("Number of k and s?");
+        int count = int.Parse(Console.ReadLine());
+        string code = Generate(count, false);
+        Console.WriteLine(code);
+        Console.ReadKey();
+        Console.WriteLine(Check(code, iters));
+        Console.ReadKey();
+    }
 
     #region Public Methods
     /// <summary>
@@ -40,7 +52,7 @@ public class ULInterface : MonoBehaviour {
         }
         for (; slots > 0; slots--)
         {
-            tree.FillLast(rng.Range(0, 2) == 0 ? new Leaf("k") : new Leaf("s"));
+            tree.FillLast(new Random().Next() % 2 == 0 ? new Leaf("k") : new Leaf("s"));
         }
         return tree.ToString();
     }
@@ -49,7 +61,7 @@ public class ULInterface : MonoBehaviour {
     #region Private Classes
     private class CodeTree
     {
-        private string N { set;  get; }
+        private string N { set; get; }
         private CodeTree child1;
         private CodeTree child2;
 
@@ -65,7 +77,7 @@ public class ULInterface : MonoBehaviour {
 
         public virtual bool FillRandom(CodeTree toAdd)
         {
-            if (rng.Range(0, 2) == 0)
+            if (new Random().Next() % 2 == 0)
             {
                 if (child1 != null)
                 {
