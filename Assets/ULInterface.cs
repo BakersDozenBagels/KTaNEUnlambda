@@ -44,6 +44,101 @@ public class ULInterface : MonoBehaviour {
         }
         return tree.ToString();
     }
+
+    /// <summary>
+    /// Generates random cruel code of a given length.
+    /// </summary>
+    /// <param name="symbols">The amount of code to generate, excluding `</param>
+    /// <param name="prepend">True if this code goes before other code</param>
+    /// <returns>Returns a string of code</returns>
+    public static string GenerateCruel(int count, bool prepend)
+    {
+        if (count < 2 && !prepend || count < 1 && prepend) throw new ArgumentException("Count must be at least 2. (1 in prepend mode)");
+        int slots = 2;
+        CodeTree tree = new CodeTree("`");
+        while (slots < count)
+        {
+            tree.FillRandom(new CodeTree("`"));
+            slots++;
+        }
+        if (prepend)
+        {
+            tree.FillLast(new Leaf(""));
+            slots--;
+        }
+        for (; slots > 0; slots--)
+        {
+            CodeTree added;
+            switch (rng.range(0, 21))
+            {
+                case 0:
+                    added = new Leaf("s");
+                    break;
+                case 1:
+                    added = new Leaf("s");
+                    break;
+                case 2:
+                    added = new Leaf("s");
+                    break;
+                case 3:
+                    added = new Leaf("s");
+                    break;
+                case 4:
+                    added = new Leaf("s");
+                    break;
+                case 5:
+                    added = new Leaf("k");
+                    break;
+                case 6:
+                    added = new Leaf("k");
+                    break;
+                case 7:
+                    added = new Leaf("i");
+                    break;
+                case 8:
+                    added = new Leaf("i");
+                    break;
+                case 9:
+                    added = new Leaf("i");
+                    break;
+                case 10:
+                    added = new Leaf("i");
+                    break;
+                case 11:
+                    added = new Leaf("i");
+                    break;
+                case 12:
+                    added = new Leaf("v");
+                    break;
+                case 13:
+                    added = new Leaf("v");
+                    break;
+                case 14:
+                    added = new Leaf("v");
+                    break;
+                case 15:
+                    added = new Leaf("v");
+                    break;
+                case 16:
+                    added = new Leaf("v");
+                    break;
+                case 17:
+                    added = new Leaf("k");
+                    break;
+                case 18:
+                    added = new Leaf("k");
+                    break;
+                case 19:
+                    added = new Leaf("k");
+                    break;
+                case 20:
+                    added = new Leaf("e");
+                    break;
+            }
+            tree.FillLast(added);
+        }
+        return tree.ToString();
+    }
     #endregion
 
     #region Private Classes

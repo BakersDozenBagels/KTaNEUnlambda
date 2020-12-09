@@ -1,2 +1,9 @@
 C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\obj\Debug\ULGeneratorToy.csprojAssemblyReference.cache
 C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\obj\Debug\ULGeneratorToy.csproj.CoreCompileInputs.cache
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\bin\Debug\ULGeneratorToy.exe.config
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\bin\Debug\ULGeneratorToy.exe
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\bin\Debug\ULGeneratorToy.pdb
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\bin\Debug\BaseDefinitions.dll
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\obj\Debug\ULGeneratorToy.csproj.CopyComplete
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\obj\Debug\ULGeneratorToy.exe
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\obj\Debug\ULGeneratorToy.pdb

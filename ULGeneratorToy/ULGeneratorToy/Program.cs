@@ -1,6 +1,5 @@
 using System;
 using UnlambdaLib;
-using System.Linq;
 
 public class ULInterface
 {
@@ -10,7 +9,7 @@ public class ULInterface
         int iters = int.Parse(Console.ReadLine());
         Console.WriteLine("Number of k and s?");
         int count = int.Parse(Console.ReadLine());
-        string code = Generate(count, false);
+        string code = GenerateCruel(count, false, new Random());
         Console.WriteLine(code);
         Console.ReadKey();
         Console.WriteLine(Check(code, iters));
@@ -35,14 +34,14 @@ public class ULInterface
     /// <param name="symbols">The amount of code to generate, excluding `</param>
     /// <param name="prepend">True if this code goes before other code</param>
     /// <returns>Returns a string of code</returns>
-    public static string Generate(int count, bool prepend)
+    public static string Generate(int count, bool prepend, Random rng)
     {
         if (count < 2 && !prepend || count < 1 && prepend) throw new ArgumentException("Count must be at least 2. (1 in prepend mode)");
         int slots = 2;
         CodeTree tree = new CodeTree("`");
         while (slots < count)
         {
-            tree.FillRandom(new CodeTree("`"));
+            tree.FillRandom(new CodeTree("`"), rng);
             slots++;
         }
         if (prepend)
@@ -52,7 +51,102 @@ public class ULInterface
         }
         for (; slots > 0; slots--)
         {
-            tree.FillLast(new Random().Next() % 2 == 0 ? new Leaf("k") : new Leaf("s"));
+            tree.FillLast(rng.Next() % 2 == 0 ? new Leaf("k") : new Leaf("s"));
+        }
+        return tree.ToString();
+    }
+
+    /// <summary>
+    /// Generates random cruel code of a given length.
+    /// </summary>
+    /// <param name="symbols">The amount of code to generate, excluding `</param>
+    /// <param name="prepend">True if this code goes before other code</param>
+    /// <returns>Returns a string of code</returns>
+    public static string GenerateCruel(int count, bool prepend, Random rng)
+    {
+        if (count < 2 && !prepend || count < 1 && prepend) throw new ArgumentException("Count must be at least 2. (1 in prepend mode)");
+        int slots = 2;
+        CodeTree tree = new CodeTree("`");
+        while (slots < count)
+        {
+            tree.FillRandom(new CodeTree("`"), rng);
+            slots++;
+        }
+        if (prepend)
+        {
+            tree.FillLast(new Leaf(""));
+            slots--;
+        }
+        for (; slots > 0; slots--)
+        {
+            CodeTree added = new Leaf("");
+            switch (rng.Next() % 21)
+            {
+                case 0:
+                    added = new Leaf("s");
+                    break;
+                case 1:
+                    added = new Leaf("s");
+                    break;
+                case 2:
+                    added = new Leaf("s");
+                    break;
+                case 3:
+                    added = new Leaf("s");
+                    break;
+                case 4:
+                    added = new Leaf("s");
+                    break;
+                case 5:
+                    added = new Leaf("k");
+                    break;
+                case 6:
+                    added = new Leaf("k");
+                    break;
+                case 7:
+                    added = new Leaf("i");
+                    break;
+                case 8:
+                    added = new Leaf("i");
+                    break;
+                case 9:
+                    added = new Leaf("i");
+                    break;
+                case 10:
+                    added = new Leaf("i");
+                    break;
+                case 11:
+                    added = new Leaf("i");
+                    break;
+                case 12:
+                    added = new Leaf("v");
+                    break;
+                case 13:
+                    added = new Leaf("v");
+                    break;
+                case 14:
+                    added = new Leaf("v");
+                    break;
+                case 15:
+                    added = new Leaf("v");
+                    break;
+                case 16:
+                    added = new Leaf("v");
+                    break;
+                case 17:
+                    added = new Leaf("k");
+                    break;
+                case 18:
+                    added = new Leaf("k");
+                    break;
+                case 19:
+                    added = new Leaf("k");
+                    break;
+                case 20:
+                    added = new Leaf("e");
+                    break;
+            }
+            tree.FillLast(added);
         }
         return tree.ToString();
     }
@@ -75,19 +169,19 @@ public class ULInterface
             return N + child1.ToString() + child2.ToString();
         }
 
-        public virtual bool FillRandom(CodeTree toAdd)
+        public virtual bool FillRandom(CodeTree toAdd, Random rng)
         {
-            if (new Random().Next() % 2 == 0)
+            if (rng.Next() % 2 == 0)
             {
                 if (child1 != null)
                 {
-                    if (child1.FillRandom(toAdd))
+                    if (child1.FillRandom(toAdd, rng))
                     {
                         return true;
                     }
                     else
                     {
-                        if (child2.FillRandom(toAdd))
+                        if (child2.FillRandom(toAdd, rng))
                         {
                             return true;
                         }
@@ -107,13 +201,13 @@ public class ULInterface
             {
                 if (child2 != null)
                 {
-                    if (child2.FillRandom(toAdd))
+                    if (child2.FillRandom(toAdd, rng))
                     {
                         return true;
                     }
                     else
                     {
-                        if (child1.FillRandom(toAdd))
+                        if (child1.FillRandom(toAdd, rng))
                         {
                             return true;
                         }
@@ -172,7 +266,7 @@ public class ULInterface
             return L;
         }
 
-        public override bool FillRandom(CodeTree toAdd)
+        public override bool FillRandom(CodeTree toAdd, Random rng)
         {
             return false;
         }

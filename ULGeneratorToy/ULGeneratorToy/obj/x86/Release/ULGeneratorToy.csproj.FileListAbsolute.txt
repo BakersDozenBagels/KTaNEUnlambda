@@ -1,0 +1,8 @@
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\bin\x86\Release\ULGeneratorToy.exe.config
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\bin\x86\Release\ULGeneratorToy.exe
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\bin\x86\Release\ULGeneratorToy.pdb
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\bin\x86\Release\BaseDefinitions.dll
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\obj\x86\Release\ULGeneratorToy.csproj.CoreCompileInputs.cache
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\obj\x86\Release\ULGeneratorToy.csproj.CopyComplete
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\obj\x86\Release\ULGeneratorToy.exe
+C:\Users\benja\Desktop\ktaneunlambda-master\ULGeneratorToy\ULGeneratorToy\obj\x86\Release\ULGeneratorToy.pdb
