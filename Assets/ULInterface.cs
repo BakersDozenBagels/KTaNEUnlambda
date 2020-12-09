@@ -69,70 +69,27 @@ public class ULInterface : MonoBehaviour {
         for (; slots > 0; slots--)
         {
             CodeTree added;
-            switch (rng.range(0, 21))
+            switch (rng.range(0, 100))
             {
                 case 0:
-                    added = new Leaf("s");
-                    break;
-                case 1:
-                    added = new Leaf("s");
-                    break;
-                case 2:
-                    added = new Leaf("s");
-                    break;
-                case 3:
-                    added = new Leaf("s");
-                    break;
-                case 4:
-                    added = new Leaf("s");
-                    break;
-                case 5:
-                    added = new Leaf("k");
-                    break;
-                case 6:
-                    added = new Leaf("k");
-                    break;
-                case 7:
-                    added = new Leaf("i");
-                    break;
-                case 8:
-                    added = new Leaf("i");
-                    break;
-                case 9:
-                    added = new Leaf("i");
-                    break;
-                case 10:
-                    added = new Leaf("i");
-                    break;
-                case 11:
-                    added = new Leaf("i");
-                    break;
-                case 12:
-                    added = new Leaf("v");
-                    break;
-                case 13:
-                    added = new Leaf("v");
-                    break;
-                case 14:
-                    added = new Leaf("v");
-                    break;
-                case 15:
-                    added = new Leaf("v");
-                    break;
-                case 16:
-                    added = new Leaf("v");
-                    break;
-                case 17:
-                    added = new Leaf("k");
-                    break;
-                case 18:
-                    added = new Leaf("k");
-                    break;
-                case 19:
-                    added = new Leaf("k");
-                    break;
-                case 20:
                     added = new Leaf("e");
+                    break;
+                default:
+                    switch (rng.range(0, 4))
+                    {
+                        case 0:
+                            added = new Leaf("s");
+                            break;
+                        case 1:
+                            added = new Leaf("k");
+                            break;
+                        case 2:
+                            added = new Leaf("v");
+                            break;
+                        case 3:
+                            added = new Leaf("i");
+                            break;
+                    }
                     break;
             }
             tree.FillLast(added);

@@ -7,9 +7,9 @@ public class ULInterface
     {
         Console.WriteLine("Max iterations?");
         int iters = int.Parse(Console.ReadLine());
-        Console.WriteLine("Number of k and s?");
+        Console.WriteLine("Number of letters?");
         int count = int.Parse(Console.ReadLine());
-        string code = GenerateCruel(count, false, new Random());
+        string code = Generate(count, false, new Random());
         Console.WriteLine(code);
         Console.ReadKey();
         Console.WriteLine(Check(code, iters));
@@ -80,70 +80,27 @@ public class ULInterface
         for (; slots > 0; slots--)
         {
             CodeTree added = new Leaf("");
-            switch (rng.Next() % 21)
+            switch (rng.Next() % 100)
             {
                 case 0:
-                    added = new Leaf("s");
-                    break;
-                case 1:
-                    added = new Leaf("s");
-                    break;
-                case 2:
-                    added = new Leaf("s");
-                    break;
-                case 3:
-                    added = new Leaf("s");
-                    break;
-                case 4:
-                    added = new Leaf("s");
-                    break;
-                case 5:
-                    added = new Leaf("k");
-                    break;
-                case 6:
-                    added = new Leaf("k");
-                    break;
-                case 7:
-                    added = new Leaf("i");
-                    break;
-                case 8:
-                    added = new Leaf("i");
-                    break;
-                case 9:
-                    added = new Leaf("i");
-                    break;
-                case 10:
-                    added = new Leaf("i");
-                    break;
-                case 11:
-                    added = new Leaf("i");
-                    break;
-                case 12:
-                    added = new Leaf("v");
-                    break;
-                case 13:
-                    added = new Leaf("v");
-                    break;
-                case 14:
-                    added = new Leaf("v");
-                    break;
-                case 15:
-                    added = new Leaf("v");
-                    break;
-                case 16:
-                    added = new Leaf("v");
-                    break;
-                case 17:
-                    added = new Leaf("k");
-                    break;
-                case 18:
-                    added = new Leaf("k");
-                    break;
-                case 19:
-                    added = new Leaf("k");
-                    break;
-                case 20:
                     added = new Leaf("e");
+                    break;
+                default:
+                    switch (rng.Next() % 4)
+                    {
+                        case 0:
+                            added = new Leaf("s");
+                            break;
+                        case 1:
+                            added = new Leaf("k");
+                            break;
+                        case 2:
+                            added = new Leaf("v");
+                            break;
+                        case 3:
+                            added = new Leaf("i");
+                            break;
+                    }
                     break;
             }
             tree.FillLast(added);
