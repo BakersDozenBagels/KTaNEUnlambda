@@ -9,7 +9,7 @@ public class ULInterface
         int iters = int.Parse(Console.ReadLine());
         Console.WriteLine("Number of letters?");
         int count = int.Parse(Console.ReadLine());
-        string code = Generate(count, false, new Random());
+        string code = GenerateCruel(count, false, new Random());
         Console.WriteLine(code);
         Console.ReadKey();
         Console.WriteLine(Check(code, iters));

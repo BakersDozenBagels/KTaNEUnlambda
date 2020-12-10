@@ -68,14 +68,17 @@ public class ULInterface : MonoBehaviour {
         }
         for (; slots > 0; slots--)
         {
-            CodeTree added;
-            switch (rng.range(0, 100))
+            CodeTree added = new Leaf("");
+            switch (rng.Range(0, 101))
             {
                 case 0:
                     added = new Leaf("e");
                     break;
+                case 1:
+                    added = new Leaf("v");
+                    break;
                 default:
-                    switch (rng.range(0, 4))
+                    switch (rng.Range(0, 4))
                     {
                         case 0:
                             added = new Leaf("s");
@@ -84,7 +87,7 @@ public class ULInterface : MonoBehaviour {
                             added = new Leaf("k");
                             break;
                         case 2:
-                            added = new Leaf("v");
+                            added = new Leaf("s");
                             break;
                         case 3:
                             added = new Leaf("i");
