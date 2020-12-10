@@ -69,7 +69,11 @@ public class ULInterface : MonoBehaviour {
         for (; slots > 0; slots--)
         {
             CodeTree added = new Leaf("");
+<<<<<<< HEAD
+            switch (rng.Range(0, 100))
+=======
             switch (rng.Range(0, 101))
+>>>>>>> 9fa7acb869d1a75596217763cc29a97210d6b853
             {
                 case 0:
                     added = new Leaf("e");
