@@ -80,10 +80,13 @@ public class ULInterface
         for (; slots > 0; slots--)
         {
             CodeTree added = new Leaf("");
-            switch (rng.Next() % 100)
+            switch (rng.Next() % 101)
             {
                 case 0:
                     added = new Leaf("e");
+                    break;
+                case 1:
+                    added = new Leaf("v");
                     break;
                 default:
                     switch (rng.Next() % 4)
@@ -95,7 +98,7 @@ public class ULInterface
                             added = new Leaf("k");
                             break;
                         case 2:
-                            added = new Leaf("v");
+                            added = new Leaf("s");
                             break;
                         case 3:
                             added = new Leaf("i");
