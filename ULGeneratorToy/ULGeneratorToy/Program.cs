@@ -7,7 +7,7 @@ public class ULInterface
     {
         Console.WriteLine("Max iterations?");
         int iters = int.Parse(Console.ReadLine());
-        Console.WriteLine("Number of letters?");
+        Console.WriteLine("Number of cruel letters?");
         int count = int.Parse(Console.ReadLine());
         string code = GenerateCruel(count, false, new Random());
         Console.WriteLine(code);
@@ -25,7 +25,10 @@ public class ULInterface
     /// <returns></returns>
     public static string Check(string program, int iters)
     {
-        return Interpreter.Interpret(program, iters).ToString();
+        Interpreter ir = new Interpreter();
+        string r = ir.StartInterpret(program, iters).ToString();
+        Console.WriteLine(ir.logging.JoinStrings());
+        return r;
     }
 
     /// <summary>
@@ -75,6 +78,11 @@ public class ULInterface
         if (prepend)
         {
             tree.FillLast(new Leaf(""));
+            slots--;
+        }
+        else
+        {
+            tree.FillRandom(new Leaf("c"), rng);
             slots--;
         }
         for (; slots > 0; slots--)
