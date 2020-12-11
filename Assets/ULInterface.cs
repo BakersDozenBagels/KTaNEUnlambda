@@ -14,7 +14,10 @@ public class ULInterface : MonoBehaviour {
     /// <returns></returns>
     public static string Check(string program, int iters)
     {
-        return Interpreter.Interpret(program, iters).ToString();
+        Interpreter ir = new Interpreter();
+        string result = ir.StartInterpret(program, iters).ToString();
+        Debug.Log(ir.logging.JoinStrings());
+        return result;
     }
 
     /// <summary>
@@ -64,6 +67,11 @@ public class ULInterface : MonoBehaviour {
         if (prepend)
         {
             tree.FillLast(new Leaf(""));
+            slots--;
+        }
+        else
+        {
+            tree.FillRandom(new Leaf("c"));
             slots--;
         }
         for (; slots > 0; slots--)
